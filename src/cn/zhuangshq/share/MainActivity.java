@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -23,18 +24,17 @@ public class MainActivity extends Activity {
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {    
 		    getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);    
 		    getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);    
-		}  
-//		final LinearLayout container = (LinearLayout) findViewById(R.id.container);
-//		LinearLayout main = (LinearLayout) findViewById(R.id.main);
-//		
-//		LinearLayout.LayoutParams layoutParams = (android.widget.LinearLayout.LayoutParams) main.getLayoutParams();
-//		layoutParams.height = container.getHeight();
-//		//layoutParams.topMargin = 0;
-//		layoutParams.width = container.getWidth();
-//		
-//		
-//		main.setLayoutParams(layoutParams);
+		}
 		
+		LinearLayout btn = (LinearLayout) findViewById(R.id.btnMenu);
+		btn.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				btn.setBackgroundColor("#fff");
+			}
+		});
 	}
 
 	@Override
